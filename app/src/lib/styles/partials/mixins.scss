@@ -1,0 +1,14 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+// Necessary for FireFox.
+// input[type="search"] needs -moz-box-sizing declared LAST for it to
+// recognize it.
+// Gulp's autoprefixer doesn't resolve this issue, because it'll set the
+// vendor prefixes FIRST.
+@mixin box-sizing($box-model) {
+  box-sizing: $box-model;
+  // -webkit-box-sizing: $box-model; // Safari <= 5
+  // -moz-box-sizing: $box-model; // Firefox <= 19
+}

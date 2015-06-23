@@ -1,0 +1,184 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+@import '../lib/styles/partials/variables';
+@import '../lib/styles/partials/mixins';
+@import '../lib/styles/partials/common';
+
+$horizontal-menu-li-width:140px;
+$horizontal-menu-li-width-small: 100px;
+$vertical-menu-li-height: 50px;
+$vertical-menu-li-padding: 36px;
+$move-transition: cubic-bezier(.8, .005, .2, 1);
+
+.directional-nav {
+  background: $blue;
+  user-select: none;
+
+  .active-bar-horizontal {
+    bottom: 0;
+    display: block;
+    height: 0;
+    left: 0;
+    position: absolute;
+    transition: height 200ms $move-transition;
+    width: $horizontal-menu-li-width;
+    z-index: 1;
+  }
+
+  .active-bar-vertical {
+    background: $active;
+    display: block;
+    height: 86px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: width 200ms $move-transition;
+    width: 0;
+  }
+
+  .active-bar-horizontal,
+  .active-bar-vertical {
+    &.move {
+      transition: transform 500ms $move-transition;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li:not(.result) {
+    text-align: center;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  // #active-bar must be last element in list for this to work
+  [data-active-bar="false"]:hover,
+  [data-active-bar="false"]:active,
+  [data-active-bar="false"]:focus {
+    ~ .active-bar-horizontal,
+    ~ .active-bar-vertical {
+      display: none;
+    }
+
+    ~ .active-bar-horizontal {
+      transform: translateX(0);
+    }
+
+    ~ .active-bar-vertical {
+      transform: translateY(0);
+    }
+  }
+
+  a {
+    display: block;
+    width: 100%;
+
+    &:after {
+      background: $active;
+      bottom: 0;
+      content: '';
+      position: absolute;
+      right: 0;
+    }
+
+    span {
+      color: $white;
+    }
+  }
+}
+
+.vertical.directional-nav {
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100px;
+  z-index: 9999;
+
+  &:not([data-on="false"]):hover {
+    .active-bar-vertical {
+      width: 6px;
+    }
+  }
+
+  &:not([data-on="false"]) {
+    li:focus ~ .active-bar-vertical,
+    li:active ~ .active-bar-vertical {
+      background: $active;
+      width: 6px;
+    }
+  }
+
+  // arbitrary large number larger than the total number
+  // of menu items that would realistically fit in order
+  // to avoid JS CSS injection
+  $vertical-menu-items:10;
+  @for $i from 0 to $vertical-menu-items {
+    &.pos-#{$i} .active-bar-vertical {
+      transform: translateY($i*($vertical-menu-li-height + $vertical-menu-li-padding));
+    }
+  }
+
+  ul {
+    display: inline-block;
+    margin: (116px + 80px) 0;
+    position: relative;
+    width: 100%;
+  }
+
+  .icon {
+    padding: 5px 0 0;
+    width: 50px;
+  }
+
+  .icon,
+  span {
+    position: relative;
+    z-index: 99;
+  }
+}
+
+.vertical li:not(.active-bar-vertical) {
+  height: $vertical-menu-li-height + $vertical-menu-li-padding;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    ~ .active-bar-vertical {
+      background: $active;
+      width: 6px;
+    }
+  }
+
+  &.active a {
+    &:after {
+      width: 100%;
+    }
+  }
+
+  a {
+    height: 100%;
+    position: relative;
+
+    &:after {
+      height: 100%;
+      transition: width $cubic-bezier;
+      width: 0;
+    }
+  }
+
+  span {
+    display: block;
+
+    font-size: .9rem;
+  }
+}

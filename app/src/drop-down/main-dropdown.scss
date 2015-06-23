@@ -1,0 +1,134 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+@import '../lib/styles/partials/variables';
+@import '../lib/styles/partials/mixins';
+@import '../lib/styles/partials/common';
+
+.dropdown {
+  margin: 200px auto;
+  max-width: 380px;
+  outline: none;
+  position: relative;
+  user-select: none;
+
+  * {
+    @include box-sizing(border-box);
+    cursor: default;
+    outline: none;
+  }
+
+  form {
+    &.hidden {
+      display: none;
+    }
+  }
+
+}
+
+ul {
+  background: $white;
+  height: 0;
+  list-style-type: none;
+  margin: 0;
+  overflow-y: scroll;
+  padding: 0;
+  transition: height .4s cubic-bezier(.5, .08, 0, 1);
+  width: 450px;
+
+  &.active {
+    display: block;
+    height: 18rem;
+  }
+
+  li {
+    animation-fill-mode: forwards;
+    background: $white;
+    border: 0;
+    border-bottom: 1px solid $light-gray;
+    font-size: .9rem;
+    font-weight: 200;
+    height: 3rem;
+    line-height: 3rem;
+    margin: 0 1rem;
+    transition: color 300ms;
+    width: 350px;
+
+    &:active,
+    &:focus {
+      color: $medium-gray;
+    }
+  }
+}
+
+.dropdown-toggle {
+  background: $white;
+  border-bottom: 1px solid $light-gray;
+  display: block;
+  font-size: .875rem;
+  font-weight: 200;
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 1rem;
+  position: relative;
+  width: 380px;
+
+  &:active,
+  &:focus {
+    transition: box-shadow 500ms cubic-bezier(0, 0, 0, 1);
+  }
+
+  &.open .dropdown-caret {
+    transform: rotate(-180deg);
+  }
+
+  .dropdown-selected-option {
+    transition: all .1s linear;
+  }
+
+  &.show-query {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .dropdown-caret {
+    height: .5rem;
+    margin-top: -.1rem;
+    position: absolute;
+    right: 1.3rem;
+    top: 50%;
+    transition: all $cubic-bezier;
+  }
+}
+
+.fade-query {
+  .dropdown-selected-option {
+    opacity: 0;
+    transform: translateX(-.5rem);
+  }
+}
+
+.dropdown-options {
+  overflow: hidden;
+  position: relative;
+}
+
+.scrollable {
+  background: rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 3px;
+  top: 0;
+  transition: top .08s;
+  width: 3px;
+  z-index: 5;
+
+  &.fade-out {
+    // need !important declaration to override inline javascript styling for this element
+    height: 0 !important;
+    opacity: 0;
+    transition: all .2s linear;
+  }
+}

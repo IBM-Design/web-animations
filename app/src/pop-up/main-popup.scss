@@ -1,0 +1,104 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+@import '../lib/styles/partials/variables';
+@import '../lib/styles/partials/mixins';
+@import '../lib/styles/partials/common';
+
+.popout {
+  width: 800px;
+
+  h1 {
+    cursor: default;
+    display: inline-block;
+    font-size: 3rem;
+  }
+}
+
+.information {
+  background: $lighter-gray;
+  padding: 1.5rem 2.5rem;
+
+  &:before {
+    border-bottom: 20px solid transparent;
+    border-right: 20px solid $lighter-gray;
+    border-top: 20px solid transparent;
+    content: '';
+    display: block;
+    height: 0;
+    left: -15px;
+    position: absolute;
+    top: 40px;
+    width: 15px;
+    z-index: 9999;
+  }
+
+  h2 {
+    color: $blue;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    width: 250px;
+  }
+
+  p {
+    font-weight: light;
+    line-height: 28px;
+    margin: 1rem 0;
+    width: 300px;
+  }
+
+  button {
+    background: none;
+    border: 2px solid $blue;
+    color: $blue;
+    font-size: 1rem;
+    height: 34px;
+    line-height: 30px;
+    min-width: 120px;
+    outline-width: 0;
+    padding: 0 10px;
+    transition: all 100ms ease-in-out;
+
+    &:active,
+    &:focus {
+      border-color: $active;
+    }
+
+    &:hover {
+      background: $blue;
+      color: $white;
+    }
+  }
+}
+
+.information-container {
+  display: inline-block;
+  margin: 45px 0 0 15px;
+  overflow: hidden;
+  padding: 0 0 0 15px;
+  position: absolute;
+  transition: all 500ms ease-in-out;
+  width: 400px;
+
+  &.closed {
+    padding: 0;
+    width: 0;
+  }
+}
+
+.information-container:active,
+.information-container:focus {
+  outline: none;
+
+  .information {
+    background: $light-gray;
+    transition: all 200ms;
+
+    &:before {
+      border-right-color: $light-gray;
+      transition: all 200ms;
+    }
+  }
+}

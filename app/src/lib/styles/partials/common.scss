@@ -1,0 +1,122 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+html {
+  // http://stackoverflow.com/
+  // questions/9733011/
+  // safari-changing-font-weights-when-unrelated-animations-are-running
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  margin: 0;
+  min-width: 1024px;
+  padding: 0;
+}
+
+a {
+  color: $active;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:active {
+    background: none;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: $overlay-blue;
+  }
+}
+
+h1 {
+  color: $blue;
+  font-weight: bold;
+  line-height: 8.25rem;
+  padding-left: 4px;
+
+  a:active,
+  a:focus {
+    outline: 1px dotted $active;
+  }
+}
+
+.title-container {
+  height: 8.25rem;
+  position: relative;
+  width: 100%;
+
+  .page-title {
+    opacity: 0;
+    position: absolute;
+    transition: all 200ms;
+
+    &.fade-in {
+      opacity: 1;
+    }
+
+    .fade-in.fade-out {
+      opacity: 0;
+    }
+  }
+}
+
+main {
+  display: inline-block;
+  left: 50%;
+  position: relative;
+  transform: translate(-50%);
+}
+
+::-webkit-input-placeholder {
+  color: $active;
+}
+
+.skip {
+  left: -1000px;
+  position: absolute;
+  top: -1000px;
+
+  &:focus {
+    color: $white;
+    left: 40%;
+    top: 40%;
+    transform: translate(-50%);
+    z-index: 9999999;
+  }
+}
+
+.example {
+  border: 1px solid $light-gray;
+  margin: 2rem auto;
+  width: 75%;
+}
+
+header {
+  background: $blue;
+  position: relative;
+  z-index: 99999;
+
+  a {
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  h1 {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 80px;
+    margin: 0;
+    padding: 0 0 0 1rem;
+  }
+}

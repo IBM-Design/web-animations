@@ -1,0 +1,43 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+ viewBox="0 0 26 22" enable-background="new 0 0 26 22" xml:space="preserve" id="loader">
+    <rect x="2" class="bar" fill="#008571" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;26;26;4;4;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;0;0;11;11;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#008571;#ccc; #ccc;#008571; #008571;#008571 ;#008571" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="3" fill="#008571" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;24;24;14;14;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;1;1;6;6;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#008571;#ccc; #ccc;#ccc; #ccc;#008571; #008571" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="6" fill="#008571" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;20;20;18;18;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;3;3;4;4;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#008571;#ccc; #ccc;#008571; #008571;#008571; #008571" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="9" fill="#008571" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;18;18;20;20;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;4;4;3;3;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#008571;#ccc; #ccc;#ccc; #ccc;#008571; #008571" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="12" fill="#ccc" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;14;14;20;20;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;6;6;3;3;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#ccc;#008571; #008571;#008571; #008571;#ccc; #ccc;" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="15" fill="#ccc" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;10;10;18;18;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;8;8;4;4;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#ccc; #008571; #008571; #ccc; #ccc ;#ccc; #ccc;" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="18" fill="#ccc" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;6;6;14;14;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;10;10;6;6;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#ccc;#008571; #008571;#008571; #008571;#ccc; #ccc;" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="2" class="bar" y="21" fill="#ccc" width="22" height="1">
+        <animate id="animation1" attributeName="width" values="22;2;2;4;4;22;22" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation2" attributeName="x" values="2;12;12;11;11;2;2" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+        <animate id="animation3" attributeName="fill" values="#ccc; #008571; #008571; #ccc; #ccc ;#ccc; #ccc;" keyTimes="0;0.3;0.4;0.6;0.7;0.9;1" dur="1.5s" begin="0s" repeatCount="indefinite"/>
+    </rect>
+</svg>

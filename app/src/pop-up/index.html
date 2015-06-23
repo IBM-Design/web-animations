@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IBM DL Motion Examples</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0.25">
+    
+    <link rel="stylesheet" href="pop-up.css">
+</head>
+<body>
+
+<main>
+    <div class="popout" id="random-info">
+        <h1 data-show aria-haspopup="true" aria-expanded="true" role="heading">Title</h1>
+        <div class="information-container" role="alertdialog" aria-labelledby="popout-description">
+            <div class="information">
+                <h2 role="heading">Welcome to Product Title!</h2>
+                <p id="popout-description">This is a pop up with useful information about this specific page or feature.</p>
+                <button data-hide aria-controls="random-info">Got it</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<script src="../lib/scripts.js"></script>
+<script src="pop-up.js"></script>
+
+</body>
+</html>

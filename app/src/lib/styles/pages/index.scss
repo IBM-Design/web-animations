@@ -1,0 +1,70 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+@import '../partials/variables';
+@import '../partials/mixins';
+@import '../partials/common';
+
+.examples {
+  $size: 750px;
+  $color-change-time: 300ms;
+
+  list-style-type: none;
+  margin: 2rem;
+  padding: 0;
+  text-align: center;
+  width: 800px;
+
+  li {
+    $grid-border: 1px solid $light-gray;
+    background: $almost-white;
+    border-left: $grid-border;
+    border-top: $grid-border;
+    float: left;
+    height: $size / 3;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: background-color $color-change-time;
+    width: $size / 3;
+
+    &:hover {
+      background-color: $white;
+    }
+
+    &:nth-child(3),
+    &:last-child {
+      border-right: $grid-border;
+    }
+
+    &:nth-last-child(3),
+    &:nth-last-child(2),
+    &:last-child {
+      border-bottom: $grid-border;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      transition: color $color-change-time;
+      width: 100%;
+    }
+
+    a:hover {
+      color: $blue;
+    }
+
+    img {
+      left: 50%;
+      max-height: 67%;
+      max-width: 67%;
+      position: absolute;
+      top: 25%;
+      transform: translate(-50%);
+    }
+  }
+}

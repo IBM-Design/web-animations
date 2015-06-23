@@ -1,0 +1,168 @@
+// Licensed Materials - Property of IBM
+// © Copyright IBM Corporation 2015. All Rights Reserved.
+// This licensed material is licensed under the Apache 2.0 license. http://www.apache.org/licenses/LICENSE-2.0.
+
+@import '../lib/styles/partials/variables';
+@import '../lib/styles/partials/mixins';
+@import '../lib/styles/partials/common';
+@import '../top-nav/main-topnav';
+
+$border: .7rem;
+$line-height: .875rem;
+
+.search-container {
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(0);
+  transition: transform $cubic-bezier;
+  width: 350px;
+  z-index: -1;
+
+  &.open {
+    opacity: 1;
+    transform: translateY(80px);
+  }
+}
+
+.search-loader {
+  align-items: center;
+  background: $super-light-gray;
+  bottom: 0;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 99;
+
+  &.showing {
+    opacity: 1;
+  }
+
+  img {
+    flex: 0 1 auto;
+    height: 36px;
+    margin-top: 48px;
+    width: 36px;
+  }
+}
+
+.results {
+  background: $super-light-gray;
+  margin: 0;
+  padding: 0;
+
+  span {
+    display: inline-block;
+    opacity: 0;
+    transition: all .2s ease-in-out;
+  }
+
+  .enter {
+    opacity: 1;
+    transform: translateX(1.5rem);
+  }
+}
+
+.result {
+  font-size: .875rem;
+  font-weight: 200;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  position: relative;
+  transition: height $cubic-bezier;
+}
+
+.matched {
+  background: $super-light-gray;
+  float: none;
+  height: 3rem;
+  line-height: 3rem;
+  opacity: 1;
+  text-align: left;
+  width: 350px;
+
+  &:active,
+  &:focus {
+    background-color: $medium-gray;
+    outline: none;
+    transition: background-color 200ms;
+  }
+}
+
+.glass {
+  position: absolute;
+  right: 1rem;
+  top: .9rem;
+  transition: $cubic-bezier;
+  z-index: 999;
+
+  img {
+    height: 12px;
+    width: 12px;
+  }
+}
+
+form {
+  overflow: hidden;
+  position: relative;
+
+  input {
+    @include box-sizing(border-box);
+    // this is important, so that we can override the default styles in Safari
+    -webkit-appearance: none;
+    background: $white;
+    border: .7rem solid $active;
+    display: block;
+    font-family: inherit;
+    font-size: .875rem;
+    font-weight: 200;
+    height: 55px;
+    margin: 0;
+    padding: 0 12px 0 8px;
+    position: relative;
+    transition: box-shadow .45s, border-color .45s ease-in-out, background-color 400ms;
+    width: 100%;
+    z-index: 999;
+
+    &:focus,
+    &:active {
+      outline-width: 0;
+      // used in conjunction with a timeout to briefly highlight the search input
+    }
+  }
+
+  .flash {
+    background-color: $light-yellow;
+    transition-delay: 200ms;
+  }
+
+  &.searching {
+    .glass {
+      opacity: 0;
+      transform: translateY(-2rem);
+    }
+  }
+}
+
+.number-of-results {
+  left: -1000px;
+  position: fixed;
+  top: -1000px;
+}
+
+$elements: 100;
+$transition-speed:.25s;
+@for $i from 1 to $elements+1 {
+  ul.results li:nth-child(#{$i}) {
+    span {
+      transition-delay: ($i*$transition-speed);
+    }
+  }
+}
