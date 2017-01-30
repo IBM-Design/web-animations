@@ -1,6 +1,6 @@
 {
   "name": "motion",
-  "author": "Idean",
+  "author": "IBM",
   "license": "Apache-2.0",
   "scripts": {
     "start": "gulp"
